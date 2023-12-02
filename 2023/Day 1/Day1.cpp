@@ -27,7 +27,7 @@ QMap<QString, numbersAsString> charToNumbers = {
     {"seven", seven},
     {"eight", eight},
     {"nine", nine},
-};
+    };
 
 int sum = 0;
 QString Result;
@@ -37,8 +37,8 @@ int process_exercise_two(const QString& line);
 
 int main()
 {
-    QString filePathOne = "/home/jonas/dev/qt-workspace/Day1/numbers.txt";
-    QString filePathTwo = "/home/jonas/dev/qt-workspace/Day1/secondNumbersAsChars.txt";
+    QString filePathOne = "/home/jonas/dev/qt-workspace/AdventOfCode2023/AdventOfCode_Day1_Example_1.txt";
+    QString filePathTwo = "/home/jonas/dev/qt-workspace/AdventOfCode2023/AdventOfCode_Day1_Example_2.txt";
 
     cout << "Advent Of Coding" << endl;
     cout << endl;
@@ -124,5 +124,3 @@ int process_exercise_one(const QString& line)
 
     return sum;
 }
-
-
