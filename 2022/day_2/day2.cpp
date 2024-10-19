@@ -7,6 +7,8 @@ using namespace std;
 // A for Rock, B for Paper, and C for Scissors.
 // X for Rock, Y for Paper, and Z for Scissors.
 
+// TODO comments
+
 int main(int argc, char const *argv[])
 {
     ifstream file2;
