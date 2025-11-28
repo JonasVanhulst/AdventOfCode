@@ -1,7 +1,14 @@
-# C++ objects and libs
+############################
+# C++ / GCC / Clang / MSVC #
+############################
+
+# Object files
 *.slo
 *.lo
 *.o
+*.obj
+
+# Static and dynamic libs
 *.a
 *.la
 *.lai
@@ -10,7 +17,21 @@
 *.dll
 *.dylib
 
-# Qt-es
+# Executables
+*.exe
+*.out
+*.app
+
+# Other build artifacts
+*.lprof
+*.gcda
+*.gcno
+*.gcov
+
+############################
+# Qt-specific              #
+############################
+
 object_script.*.Release
 object_script.*.Debug
 *_plugin_import.cpp
@@ -27,28 +48,104 @@ qrc_*.cpp
 ui_*.h
 *.qmlc
 *.jsc
-Makefile*
-*build-*
 *.qm
 *.prl
 
 # Qt unit tests
 target_wrapper.*
 
-# QtCreator
+# QtCreator autosave
 *.autosave
 
-# QtCreator Qml
+# QtCreator QML
 *.qmlproject.user
 *.qmlproject.user.*
 
 # QtCreator CMake
 CMakeLists.txt.user*
 
-# QtCreator 4.8< compilation database
+# QtCreator old compilation database
 compile_commands.json
 
-# QtCreator local machine specific files for imported projects
+# QtCreator imported project machine-specific
 *creator.user*
 
+# QML cache
 *_qmlcache.qrc
+
+# Common Qt build folders
+build-*/
+build*/
+*/build/
+
+############################
+# CMake                    #
+############################
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.cmake
+
+############################
+# CLion / JetBrains        #
+############################
+
+.idea/
+cmake-build-*/
+*.iml
+
+############################
+# VSCode                   #
+############################
+
+.vscode/
+
+############################
+# Python                   #
+############################
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env*/
+.venv*/
+env/
+
+# Packaging and build
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python cache/log
+*.log
+*.tmp
+
+############################
+# General                  #
+############################
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
