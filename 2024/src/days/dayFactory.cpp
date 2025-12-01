@@ -2,12 +2,12 @@
 // Created by Vanhuljo on 28/11/2025.
 //
 
-#include "dayFactory.h"
-
+#include <memory>
 #include <stdexcept>
 
-#include "day01.h"
-#include "day02.h"
+#include "2024/include/day.h"
+#include "2024/include/day01.h"
+#include "2024/include/day02.h"
 
 namespace AoC_2024 {
     std::unique_ptr<day> createDay(const int currentDay) {

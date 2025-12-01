@@ -5,12 +5,11 @@
 #ifndef ADVENTOFCODE_DAYFACTORY_H
 #define ADVENTOFCODE_DAYFACTORY_H
 
-#pragma once
 #include <memory>
 #include "day.h"
 
 namespace AoC_2025 {
     std::unique_ptr<day> createDay(int currentDay);
-}
+} // AoC_2025
 
 #endif //ADVENTOFCODE_DAYFACTORY_H

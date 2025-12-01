@@ -14,8 +14,8 @@
 /* ============================
    PROJECT SPECIFIC INCLUDES
    ============================ */
-#include "dayFactory.h"
-#include "utils.h"
+#include "2024/include/dayFactory.h"
+#include "2024/include/utils.h"
 
 int main(int argc, char **argv) {
     constexpr int year = 2024;  // Specify the current Advent of Code year
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     const std::string input = AoC_2024::readFile(filepath); // Reading the file based on the filepath
 
     /*
-     * Solving the day by caling the two functions for both parts
+     * Solving the day by calling the two functions for both parts
      */
     std::cout << "Part 1: " << std::endl << puzzle->solvePartOne(input) << std::endl;
     std::cout << "Part 2: " << std::endl << puzzle->solvePartTwo(input) << std::endl;

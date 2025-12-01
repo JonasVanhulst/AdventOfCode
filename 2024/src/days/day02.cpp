@@ -2,7 +2,7 @@
 // Created by Vanhuljo on 28/11/2025.
 //
 
-#include "day02.h"
+#include "2024/include/day02.h"
 
 #include <iostream>
 

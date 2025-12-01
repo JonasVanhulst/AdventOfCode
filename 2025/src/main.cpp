@@ -1,32 +1,43 @@
-//
-// Created by Vanhuljo on 28/11/2025.
-//
+/******************************************************************************
+ * Project Name: AdventOfCode
+ * File: main.cpp
+ * Author: Jonas Vanhulst
+ * Date: 28/11/2025
+ ******************************************************************************/
 
+/* ============================
+   SYSTEM / STANDARD LIBRARY INCLUDES
+   ============================ */
+#include <fstream>
 #include <iostream>
 
-#include "2025/include/dayFactory.h"
+/* ============================
+   PROJECT SPECIFIC INCLUDES
+   ============================ */
+#include "dayFactory.h"
+#include "utils.h"
 
-void printYear(const int year) {
-    std::cout << "==============================\n";
-    std::cout << "      Advent of Code " << year << "\n";
-    std::cout << "==============================\n";
-}
+int main(int argc, char **argv) {
+    constexpr int year = 2025;  // Specify the current Advent of Code year
+    AoC_2025::printYear(year);  // Printing the welcome ascii art
 
-std::string readFile(const std::string &fileName) {
-    return fileName.substr(0, fileName.find(".txt"));
-}
+    constexpr int day = 1;  // Specify the current day to be solved
 
-int main(int argc, char ** argv) {
-    constexpr int year = 2025;
-    printYear(year);
+    /*
+     * requiredFilePath function
+     * @args current day and false if it's the complete task, nothing or true if the task is in test phase
+     * @returns the correct filepath for the current day
+     */
+    const std::string filepath = AoC_2025::requiredFilePath(day, false);
 
-    constexpr int day = 1;
-    const std::string fileName = "test.txt";
+    const auto puzzle = AoC_2025::createDay(day);   // Creating the day
+    puzzle->welcome();  // Printing the current day in the terminal for the user
 
-    const auto puzzle = AoC_2025::createDay(day);
+    const std::string input = AoC_2025::readFile(filepath); // Reading the file based on the filepath
 
-    const std::string input = readFile(fileName);
-
-    std::cout << "Part 1: " << puzzle->solvePartOne(input) << std::endl;
-    std::cout << "Part 1: " << puzzle->solvePartTwo(input) << std::endl;
+    /*
+     * Solving the day by calling the two functions for both parts
+     */
+    std::cout << "Part 1: " << std::endl << puzzle->solvePartOne(input) << std::endl;
+    std::cout << "Part 2: " << std::endl << puzzle->solvePartTwo(input) << std::endl;
 }

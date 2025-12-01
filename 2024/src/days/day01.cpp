@@ -16,7 +16,7 @@
 /* ============================
    PROJECT SPECIFIC INCLUDES
    ============================ */
-#include "day01.h"
+#include "2024/include/day01.h"
 
 /**
  * Printing the current day into the terminal
