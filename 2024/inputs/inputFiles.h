@@ -5,6 +5,9 @@
 #ifndef ADVENTOFCODE_INPUTFILES_H
 #define ADVENTOFCODE_INPUTFILES_H
 
+/* ============================
+   NAMESPACE
+   ============================ */
 namespace AoC_2024 {
     // Day 1
     constexpr auto DAY_1_TEST_INPUT = "inputs/day01_test.txt";

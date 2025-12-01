@@ -19,9 +19,9 @@
 namespace AoC_2025{
     void printYear(int year);   // Function to print the current year
 
-    std::string requiredFilePath(int currentDay, bool isTest = true);
+    std::string requiredFilePath(int currentDay, bool isTest = true);   // Function that returns the correct filepath based on the current day
 
-    std::string readFile(const std::string &filepath);
+    std::string readFile(const std::string &filepath);  // Function to read the given filepath and return all the data as one string
 } // AoC_2025
 
 #endif //ADVENTOFCODE_UTILS_H

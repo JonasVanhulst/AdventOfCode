@@ -17,6 +17,7 @@ set(SRC_FILES
         src/days/day.cpp
         src/days/day01.cpp
         src/days/day02.cpp
+        src/days/day03.cpp
         src/days/dayFactory.cpp
         src/utils/utils.cpp
 )

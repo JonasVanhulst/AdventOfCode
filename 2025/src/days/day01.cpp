@@ -10,8 +10,6 @@
    ============================ */
 #include <iostream>
 #include <sstream>
-#include <vector>
-#include <algorithm>
 
 /* ============================
    PROJECT SPECIFIC INCLUDES
@@ -82,9 +80,7 @@ std::string AoC_2025::day01::solvePartTwo(const std::string &input) {
                 if (position > 99) position = 0;
             }
 
-            if (position == 0) {
-                countZero++;
-            }
+            if (position == 0) countZero++;
         }
     }
 

@@ -7,7 +7,7 @@
 #include <iostream>
 
 namespace AoC_2025 {
-    void day02::welcome() { std::cout << "Welcome to dag 01!" << std::endl; }
+    void day02::welcome() { std::cout << "Welcome to day 02!" << std::endl; }
 
     std::string day02::solvePartOne(const std::string &input) {
         return "todo";

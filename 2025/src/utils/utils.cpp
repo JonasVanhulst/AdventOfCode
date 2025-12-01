@@ -1,24 +1,42 @@
-//
-// Created by Vanhuljo on 28/11/2025.
-//
+/******************************************************************************
+* Project Name: AdventOfCode
+ * File: utils.cpp
+ * Author: Jonas Vanhulst
+ * Date: 1/12/2025
+ ******************************************************************************/
 
-#include "utils.h"
+/* ============================
+   SYSTEM / STANDARD LIBRARY INCLUDES
+   ============================ */
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
 #include <string>
 
+/* ============================
+   PROJECT SPECIFIC INCLUDES
+   ============================ */
+#include "utils.h"
 #include "inputFiles.h"
 
-
+/**
+ * Printing a nice header with the current advent of code year
+ * @param year
+ * @return void
+ */
 void AoC_2025::printYear(const int year) {
     std::cout << "==============================\n";
     std::cout << "      Advent of Code " << year << "\n";
     std::cout << "==============================\n";
 }
 
-
+/**
+ *  Function to return the correct file to the system based on the day and type
+ * @param currentDay - gives the current day of the exercise
+ * @param isTest - gives the command to load the real or test file
+ * @return string of the filepath
+ */
 std::string AoC_2025::requiredFilePath(const int currentDay, const bool isTest) {
     switch (currentDay) {
         case 1: return isTest ? DAY_1_TEST_INPUT : DAY_1_REAL_INPUT;
@@ -39,11 +57,14 @@ std::string AoC_2025::requiredFilePath(const int currentDay, const bool isTest) 
     }
 }
 
+/**
+ * Function to read the file and return the data as a string buffer
+ * @param filepath - the filepath that has the correct day
+ * @return string - data buffer
+ */
 std::string AoC_2025::readFile(const std::string &filepath) {
     std::ifstream file(filepath);
-    if (!file.is_open()) {
-        throw std::runtime_error("Could not open the file: " + filepath);
-    }
+    if (!file.is_open()) { throw std::runtime_error("Could not open the file: " + filepath); }
 
     std::stringstream buffer;
     buffer << file.rdbuf();

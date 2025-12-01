@@ -1,20 +1,39 @@
-//
-// Created by Vanhuljo on 28/11/2025.
-//
+/******************************************************************************
+* Project Name: AdventOfCode
+ * File: dayFactory.cpp
+ * Author: Jonas Vanhulst
+ * Date: 1/12/2025
+ ******************************************************************************/
 
+/* ============================
+   SYSTEM / STANDARD LIBRARY INCLUDES
+   ============================ */
 #include <memory>
 #include <stdexcept>
 
-#include "2024/include/day.h"
-#include "2024/include/day01.h"
-#include "2024/include/day02.h"
+/* ============================
+   PROJECT SPECIFIC INCLUDES
+   ============================ */
+#include "day.h"
+#include "day01.h"
+#include "day02.h"
+#include "day03.h"
 
+/* ============================
+   NAMESPACE
+   ============================ */
 namespace AoC_2024 {
+    /**
+     * Function to create the correct day object call to start the day
+     * @param currentDay
+     * @return correct class to handle the day exercise
+     */
     std::unique_ptr<day> createDay(const int currentDay) {
         switch (currentDay) {
             case 1: return std::make_unique<day01>();
             case 2: return std::make_unique<day02>();
+            case 3: return std::make_unique<day03>();
             default: throw std::runtime_error("Unknown day");
         }
     }
-} // AoC_2024
+}

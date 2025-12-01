@@ -14,14 +14,14 @@
 /* ============================
    PROJECT SPECIFIC INCLUDES
    ============================ */
-#include "2024/include/dayFactory.h"
-#include "2024/include/utils.h"
+#include "utils.h"
+#include "dayFactory.h"
 
 int main(int argc, char **argv) {
     constexpr int year = 2024;  // Specify the current Advent of Code year
     AoC_2024::printYear(year);  // Printing the welcome ascii art
 
-    constexpr int day = 1;  // Specify the current day to be solved
+    constexpr int day = 3;  // Specify the current day to be solved
 
     /*
      * requiredFilePath function
