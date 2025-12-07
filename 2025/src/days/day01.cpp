@@ -91,3 +91,4 @@ std::string AoC_2025::day01::solvePartTwo(const std::string &input) {
     // Returning the total zero counter
     return std::to_string(countZero);
 };
+

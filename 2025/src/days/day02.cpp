@@ -28,20 +28,22 @@ void AoC_2025::day02::welcome() { std::cout << "Welcome to day 02!" << std::endl
  */
 std::string AoC_2025::day02::solvePartOne(const std::string &input) {
     constexpr char delimiter = ','; // Defining the delimiter
-    const std::vector<std::string> result = split(input, delimiter);    // Storing the returned values into the result vector
+    const std::vector<std::string> result = split(input, delimiter);
+    // Storing the returned values into the result vector
 
     numbers.reserve(result.size()); // reserving enough data into the number list
-    for (const auto &part: result) { numbers.push_back(parseNumbers(part)); }   // Now every part in the numbers will be parsed into two values
+    for (const auto &part: result) { numbers.push_back(parseNumbers(part)); }
+    // Now every part in the numbers will be parsed into two values
 
     // Looping over every number pair in the numbers vector
     for (const auto &number: numbers) {
         for (long long i = number.first; i <= number.second; i++) {
-            std::string numberStr = std::to_string(i);  // Converting every number to a string
-            const size_t strSize = numberStr.size();    // Calculating the size
+            std::string numberStr = std::to_string(i); // Converting every number to a string
+            const size_t strSize = numberStr.size(); // Calculating the size
 
             // Checking the numbers for the same sequence with 2
             if (strSize % 2 == 0) {
-                const std::string pattern = numberStr.substr(0, strSize / 2);   // Collecting the pattern to compare
+                const std::string pattern = numberStr.substr(0, strSize / 2); // Collecting the pattern to compare
 
                 std::string repeated;
                 for (int j = 0; j < 2; ++j) { repeated += pattern; }
@@ -69,27 +71,29 @@ std::string AoC_2025::day02::solvePartTwo(const std::string &input) {
     resultPartTwo = 0;
 
     constexpr char delimiter = ','; // Defining the delimiter
-    const std::vector<std::string> result = split(input, delimiter);    // Storing the returned values into the result vector
+    const std::vector<std::string> result = split(input, delimiter);
+    // Storing the returned values into the result vector
 
     numbers.reserve(result.size()); // reserving enough data into the number list
-    for (const auto &part: result) { numbers.push_back(parseNumbers(part)); }   // Now every part in the numbers will be parsed into two values
+    for (const auto &part: result) { numbers.push_back(parseNumbers(part)); }
+    // Now every part in the numbers will be parsed into two values
 
     // Looping over every number pair in the numbers vector
     for (const auto &number: numbers) {
         for (long long i = number.first; i <= number.second; i++) {
-            std::string numberStr = std::to_string(i);  // Converting every number to a string
-            const size_t strSize = numberStr.size();    // Calculating the size
+            std::string numberStr = std::to_string(i); // Converting every number to a string
+            const size_t strSize = numberStr.size(); // Calculating the size
             // Now we create an extra for loop to get all the possible lengths of sequence length
             for (size_t k = 1; k <= strSize / 2; k++) {
                 if (strSize % k == 0) {
                     const size_t repeats = strSize / k;
-                    if (repeats < 2) continue;  // must repeat at least twice
+                    if (repeats < 2) continue; // must repeat at least twice
 
-                    const std::string pattern = numberStr.substr(0, k);   // Collecting the pattern to compare
+                    const std::string pattern = numberStr.substr(0, k); // Collecting the pattern to compare
 
                     std::string repeated;
                     repeated.reserve(strSize);
-                       // Collecting the pattern to compare
+                    // Collecting the pattern to compare
                     for (size_t j = 0; j < repeats; ++j)
                         repeated += pattern;
 
@@ -100,7 +104,6 @@ std::string AoC_2025::day02::solvePartTwo(const std::string &input) {
                     }
                 }
             }
-
         }
     }
     for (const auto &invalid: invalidNumbers) { resultPartTwo += invalid; }
@@ -122,7 +125,6 @@ std::vector<std::string> AoC_2025::day02::split(const std::string &str, const ch
     return tokens;
 }
 
-
 /**
  * Function that parses numbers from a stringlist, first it wil check te separator and then convert it to long long variables
  * @param s
@@ -131,8 +133,10 @@ std::vector<std::string> AoC_2025::day02::split(const std::string &str, const ch
 std::pair<long long, long long> AoC_2025::day02::parseNumbers(const std::string &s) {
     const auto separator = s.find('-'); // Seperator that is used in the inputfile
 
-    long long a = std::stoll(s.substr(0, separator));       // Takes the number from start to seperator and converts it to a long long type
-    long long b = std::stoll(s.substr(separator + 1));        // Takes the number from seperator to the end and converts it to a long long type
+    long long a = std::stoll(s.substr(0, separator));
+    // Takes the number from start to seperator and converts it to a long long type
+    long long b = std::stoll(s.substr(separator + 1));
+    // Takes the number from seperator to the end and converts it to a long long type
 
     return {a, b};
 }

@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     constexpr int year = 2025;  // Specify the current Advent of Code year
     AoC_2025::printYear(year);  // Printing the welcome ascii art
 
-    constexpr int day = 2;  // Specify the current day to be solved
+    constexpr int day = 4;  // Specify the current day to be solved
 
     /*
      * requiredFilePath function
