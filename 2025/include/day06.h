@@ -1,12 +1,12 @@
 /******************************************************************************
 * Project Name: AdventOfCode
- * File: day05.h
+ * File: day06.h
  * Author: Jonas Vanhulst
- * Date: 07/12/2025
+ * Date: 09/12/2025
  ******************************************************************************/
 
-#ifndef ADVENTOFCODE_DAY05_H
-#define ADVENTOFCODE_DAY05_H
+#ifndef ADVENTOFCODE_DAY06_H
+#define ADVENTOFCODE_DAY06_H
 
 /* ============================
    SYSTEM / STANDARD LIBRARY INCLUDES
@@ -21,11 +21,11 @@
    NAMESPACE WITH CLASS
    ============================ */
 namespace AoC_2025 {
-    class day05 final : public day {
+    class day06 final : public day {
     public:
-        day05() = default; // Default constructor
+        day06() = default; // Default constructor
 
-        ~day05() override = default; // Default destructor
+        ~day06() override = default; // Default destructor
 
         void welcome(int day) override; // Function that prints into the terminal
 
@@ -34,8 +34,10 @@ namespace AoC_2025 {
         std::string solvePartTwo(const std::string &input) override; // Solving the second part of the puzzle
 
     private:
-        static std::pair<long long, long long> parseNumbers(const std::string &s);  // Function to parse numbers out of a string
+        #define COLS 4  // Define the amount of data columns
+
+        long long totalPartOne = 0; // Long long counter for the total
     };
 } // AoC_2025
 
-#endif //ADVENTOFCODE_DAY05_H
+#endif //ADVENTOFCODE_DAY06_H

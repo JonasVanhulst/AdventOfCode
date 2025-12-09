@@ -19,7 +19,7 @@
 /**
  * Printing the current day into the terminal
  */
-void AoC_2025::day01::welcome() { std::cout << "Welcome to day 01!" << std::endl; }
+void AoC_2025::day01::welcome(const int day) { std::cout << "Welcome to the Advent of Code 2025 day " << day << "!" << std::endl; }
 
 /**
  * Solving part one of the puzzle

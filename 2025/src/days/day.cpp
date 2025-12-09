@@ -18,4 +18,4 @@
 /*
  * Function to show the player the current year
  */
-void AoC_2025::day::welcome() { std::cout << "Welcome to the Advent of Code 2025!" << std::endl; }
+void AoC_2025::day::welcome(const int day) { std::cout << "Welcome to the Advent of Code 2025 day " << day << "!" << std::endl; }

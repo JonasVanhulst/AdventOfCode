@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     constexpr int year = 2025;  // Specify the current Advent of Code year
     AoC_2025::printYear(year);  // Printing the welcome ascii art
 
-    constexpr int day = 5;  // Specify the current day to be solved
+    constexpr int day = 6;  // Specify the current day to be solved
 
     /*
      * requiredFilePath function
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
     const std::string filepath = AoC_2025::requiredFilePath(day, false);
 
     const auto puzzle = AoC_2025::createDay(day);   // Creating the day
-    puzzle->welcome();  // Printing the current day in the terminal for the user
+    puzzle->welcome(day);  // Printing the current day in the terminal for the user
 
     const std::string input = AoC_2025::readFile(filepath); // Reading the file based on the filepath
 

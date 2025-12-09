@@ -28,7 +28,7 @@ namespace AoC_2025 {
 
         ~day02() override = default; // Default destructor
 
-        void welcome() override; // Function that prints into the terminal
+        void welcome(int day) override; // Function that prints into the terminal
 
         std::string solvePartOne(const std::string &input) override; // Solving the first part of the puzzle
 

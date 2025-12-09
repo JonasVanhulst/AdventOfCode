@@ -21,7 +21,7 @@
 /**
  * Printing the current day into the terminal
  */
-void AoC_2025::day03::welcome() { std::cout << "Welcome to day 03!" << std::endl; }
+void AoC_2025::day03::welcome(const int day) { std::cout << "Welcome to the Advent of Code 2025 day " << day << "!" << std::endl; }
 
 /**
  * Solving part one of the puzzle
@@ -69,7 +69,7 @@ std::string AoC_2025::day03::solvePartOne(const std::string &input) {
 std::string AoC_2025::day03::solvePartTwo(const std::string &input) {
     std::stringstream ss(input);    // Creating the stringstream to get each line
     std::string line;               // Creating a string variable to hold the line data
-    int total = 0;                  // Initialising an integer total counter to hold te solution
+    long long total = 0;                  // Initialising an integer total counter to hold te solution
 
     // Reading every line
     while (std::getline(ss, line)) {

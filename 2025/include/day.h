@@ -23,7 +23,7 @@ namespace AoC_2025 {
 
         virtual ~day() = default;   // Default destructor
 
-        virtual void welcome(); // Function that prints into the terminal
+        virtual void welcome(int day); // Function that prints into the terminal
 
         virtual std::string solvePartOne(const std::string &input) = 0; // Solving the first part of the puzzle
 
