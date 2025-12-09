@@ -1,12 +1,12 @@
 /******************************************************************************
 * Project Name: AdventOfCode
- * File: day04.h
+ * File: day05.h
  * Author: Jonas Vanhulst
  * Date: 07/12/2025
  ******************************************************************************/
 
-#ifndef ADVENTOFCODE_DAY04_H
-#define ADVENTOFCODE_DAY04_H
+#ifndef ADVENTOFCODE_DAY05_H
+#define ADVENTOFCODE_DAY05_H
 
 /* ============================
    SYSTEM / STANDARD LIBRARY INCLUDES
@@ -21,11 +21,11 @@
    NAMESPACE WITH CLASS
    ============================ */
 namespace AoC_2025 {
-    class day04 final : public day {
+    class day05 final : public day {
     public:
-        day04() = default; // Default constructor
+        day05() = default; // Default constructor
 
-        ~day04() override = default; // Default destructor
+        ~day05() override = default; // Default destructor
 
         void welcome() override; // Function that prints into the terminal
 
@@ -38,4 +38,4 @@ namespace AoC_2025 {
     };
 } // AoC_2025
 
-#endif //ADVENTOFCODE_DAY03_H
+#endif //ADVENTOFCODE_DAY05_H

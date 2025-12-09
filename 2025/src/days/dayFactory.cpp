@@ -18,7 +18,7 @@
 #include "day01.h"
 #include "day02.h"
 #include "day03.h"
-#include "day04.h"
+#include "day05.h"
 
 /* ============================
    NAMESPACE
@@ -34,7 +34,7 @@ namespace AoC_2025 {
             case 1: return std::make_unique<day01>();
             case 2: return std::make_unique<day02>();
             case 3: return std::make_unique<day03>();
-            case 4: return std::make_unique<day04>();
+            case 5: return std::make_unique<day05>();
             default: throw std::runtime_error("Unknown day");
         }
     }

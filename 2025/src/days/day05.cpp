@@ -1,6 +1,6 @@
 /******************************************************************************
 * Project Name: AdventOfCode
- * File: day03.cpp
+ * File: day05.cpp
  * Author: Jonas Vanhulst
  * Date: 07/12/2025
  ******************************************************************************/
@@ -16,19 +16,19 @@
 /* ============================
    PROJECT SPECIFIC INCLUDES
    ============================ */
-#include "day04.h"
+#include "day05.h"
 
 /**
  * Printing the current day into the terminal
  */
-void AoC_2025::day04::welcome() { std::cout << "Welcome to day 04!" << std::endl; }
+void AoC_2025::day05::welcome() { std::cout << "Welcome to day 05!" << std::endl; }
 
 /**
  * Solving part one of the puzzle
  * @param input
  * @return sum of the puzzle
  */
-std::string AoC_2025::day04::solvePartOne(const std::string &input) {
+std::string AoC_2025::day05::solvePartOne(const std::string &input) {
     std::vector<std::pair<long long, long long> > ranges;   // Creating a vector to hold every range
     std::vector<long long> numbers;                         // Creating a vector to hold all the numbers
 
@@ -68,8 +68,44 @@ std::string AoC_2025::day04::solvePartOne(const std::string &input) {
  * @param input
  * @return sum of the puzzle
  */
-std::string AoC_2025::day04::solvePartTwo(const std::string &input) {
-    return "input";
+std::string AoC_2025::day05::solvePartTwo(const std::string &input) {
+    std::vector<std::pair<long long, long long>> ranges;
+    std::stringstream ss(input);
+    std::string line;
+    bool emptyLine = false;
+
+    while (std::getline(ss, line)) {
+        if (line.empty()) {
+            emptyLine = true;
+            continue;
+        }
+        if (!emptyLine) {
+            ranges.push_back(parseNumbers(line));
+        } else {
+            break;
+        }
+    }
+
+    // Sort ranges by start
+    std::sort(ranges.begin(), ranges.end());
+
+    // Merge overlapping ranges
+    std::vector<std::pair<long long, long long>> merged;
+    for (auto &r : ranges) {
+        if (merged.empty() || r.first > merged.back().second + 1) {
+            merged.push_back(r);
+        } else {
+            merged.back().second = std::max(merged.back().second, r.second);
+        }
+    }
+
+    // Count total unique numbers
+    long long total = 0;
+    for (const auto &r : merged) {
+        total += (r.second - r.first + 1);
+    }
+
+    return std::to_string(total);
 }
 
 /**
@@ -77,7 +113,7 @@ std::string AoC_2025::day04::solvePartTwo(const std::string &input) {
  * @param s
  * @return return the two numbers as a long long pair
  */
-std::pair<long long, long long> AoC_2025::day04::parseNumbers(const std::string &s) {
+std::pair<long long, long long> AoC_2025::day05::parseNumbers(const std::string &s) {
     const auto separator = s.find('-'); // Seperator that is used in the inputfile
 
     long long a = std::stoll(s.substr(0, separator));       // Takes the number from start to seperator and converts it to a long long type
